@@ -1,6 +1,6 @@
 <?php 
 
-switch ($_GET['estado']) {
+switch ($_GET['collection_status']) {
     case 'failure':
         $estado = 'Rechazado';
         break;
