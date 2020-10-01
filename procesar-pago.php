@@ -7,7 +7,7 @@ switch ($_GET['estado']) {
     case 'pending':
         $estado = 'Pendiente';
         break;
-    case 'success':
+    case 'approved':
         $estado = 'Aprobado';
         break;
     default:
