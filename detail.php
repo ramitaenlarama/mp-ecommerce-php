@@ -26,6 +26,8 @@ $preference->back_urls = array(
 
 $preference->auto_return = "approved";
 
+
+
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
 $item->id = '1234';
@@ -35,6 +37,10 @@ $item->unit_price = $_POST['price'];
 $item->description = 'Dispositivo móvil de Tienda e-commerce';
 $item->picture_url = 'https://mp-certificacion.herokuapp.com/'.$_POST['img'];
 $preference->items = array($item);
+
+
+$preference->notification_url = 'https://mp-certificacion.herokuapp.com/webhook.php';
+
 
 
 $payer = new MercadoPago\Payer();
