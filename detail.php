@@ -19,9 +19,9 @@ $preference->payment_methods = array(
 );
 
 $preference->back_urls = array(
-    "success" => "http://4c8a3a503493.ngrok.io/mp-ecommerce-php/procesar-pago.php",
-    "failure" => "http://4c8a3a503493.ngrok.io/mp-ecommerce-php/procesar-pago.php",
-    "pending" => "http://4c8a3a503493.ngrok.io/mp-ecommerce-php/procesar-pago.php",
+    "success" => "https://mp-certificacion.herokuapp.com/mp-ecommerce-php/procesar-pago.php",
+    "failure" => "https://mp-certificacion.herokuapp.com/mp-ecommerce-php/procesar-pago.php",
+    "pending" => "https://mp-certificacion.herokuapp.com/mp-ecommerce-php/procesar-pago.php",
 );
 
 $preference->auto_return = "approved";
@@ -35,11 +35,11 @@ $item->title = $_POST['title'];
 $item->quantity = 1;
 $item->unit_price = $_POST['price'];
 $item->description = 'Dispositivo móvil de Tienda e-commerce';
-$item->picture_url = 'http://4c8a3a503493.ngrok.io/mp-ecommerce-php/'.$_POST['img'];
+$item->picture_url = 'https://mp-certificacion.herokuapp.com/mp-ecommerce-php/'.$_POST['img'];
 $preference->items = array($item);
 
 
-$preference->notification_url = 'http://4c8a3a503493.ngrok.io/mp-ecommerce-php/webhook.php';
+$preference->notification_url = 'https://mp-certificacion.herokuapp.com/mp-ecommerce-php/webhook.php';
 
 
 
