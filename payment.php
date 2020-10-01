@@ -20,6 +20,14 @@ $preference->payment_methods = array(
     "installments" => 6
 );
 
+$preference->back_urls = array(
+    "success" => "https://mp-certificacion.herokuapp.com/?estado=success",
+    "failure" => "https://mp-certificacion.herokuapp.com/?estado=failure",
+    "pending" => "https://mp-certificacion.herokuapp.com/?estado=pending",
+);
+
+$preference->auto_return = "all";
+
 // Crea un ítem en la preferencia
 $item = new MercadoPago\Item();
 $item->id = '1234';
@@ -27,9 +35,8 @@ $item->title = $name;
 $item->quantity = 1;
 $item->unit_price = $price;
 $item->description = 'Dispositivo móvil de Tienda e-commerce';
-$item->picture_url = 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']).'/'.$urlImg;
+$item->picture_url = 'https://mp-certificacion.herokuapp.com/'.$urlImg;
 $preference->items = array($item);
-
 
 
 $payer = new MercadoPago\Payer();
@@ -41,7 +48,6 @@ $payer->phone = array(
     "number" => "22223333"
 );
 
-
 $payer->address = array(
     "street_name" => "False",
     "street_number" => 123,
@@ -49,15 +55,8 @@ $payer->address = array(
 );
 $preference->payer = $payer;
 
-$preference->back_urls = array(
-    "success" => '//'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."?estado=success",
-    "failure" => '//'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."?estado=failure",
-    "pending" => '//'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF'])."?estado=pending"
-);
-$preference->auto_return = "approved";
 
 $preference->external_reference = "ramanzincristian@gmail.com";
-
 
 $preference->save();
 
