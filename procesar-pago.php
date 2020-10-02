@@ -19,7 +19,6 @@ $payment_method_id = $_GET['payment_type'];
 $external_reference = $_GET['external_reference'];
 $idPago = isset($_GET['collection_id'])? $_GET['collection_id'] : $_GET['payment_id'];
 
-
 ?>
 
 
@@ -108,7 +107,7 @@ $idPago = isset($_GET['collection_id'])? $_GET['collection_id'] : $_GET['payment
                                 if($estado == 'Aprobado'){
                             ?>
                                 <p>Método de pago: <?php echo $payment_method_id ?></p>   
-                                <p>External referencec:<?php echo $external_reference  ?></p>  
+                                <p>External reference:<?php echo $external_reference  ?></p>  
                                 <p>Número de referencia: <?php echo  $idPago ?></p>   
                             <?php
                                 }
